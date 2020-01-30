@@ -65,7 +65,7 @@ def post_amenity_place(place_id, amenity_id):
     amenity_dict = amenity_obj.to_dict()
 
     if getenv('HBNB_TYPE_STORAGE') == 'db':
-        if amenity_obj in  place_obj.amenities:
+        if amenity_obj in place_obj.amenities:
             return jsonify(amenity_dict), 200
         place_obj.amenities.append(amenity_obj)
 
